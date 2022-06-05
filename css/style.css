@@ -201,7 +201,7 @@ ul-about li a {
 /**********/
 
 main {
-  /* height: calc(100vh - 90px); */
+  height: calc(100vh - 90px);
   background: radial-gradient(#03a9f4, #004b6c);
   position: relative;
   z-index: 1;
@@ -268,7 +268,7 @@ main {
   padding-left: 10rem;
   padding-top: 2rem;
   font-size: 1.5rem;
-
+  border-radius: 0.5rem;
   background-color: #03a9f4;
   background-image: url(../images/smily.png);
   background-repeat: no-repeat;
@@ -280,7 +280,7 @@ main {
   top: -1rem;
   left: -1rem;
   z-index: -2;
-  box-shadow: 5px 5px 40px white;
+  box-shadow: 5px 5px 40px 1px white, 0 0 80px 10px white;
   transform: scale(0, 1);
   transition: all linear 0.5s;
 }
