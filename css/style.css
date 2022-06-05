@@ -1,11 +1,454 @@
-* {
+/*********************/
+/* SOFT RESET ALL */
+/********************/
+*,
+*::after,
+*::before {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/*************/
+/* GENERAL */
+/************/
+
+:root {
+  --bg-color: #031321;
+  --primary-color: #2196f3;
+  --secondary-color: #255784;
+  --heading-color: white;
+  --hover-icon-color: #faac04;
+  --hover-a-color: #d5d6d5;
+}
+
+body {
+  font-family: Helvetica;
+  position: relative;
+}
+
+h2 {
+  color: var(--heading-color);
+  font-size: 4rem;
+}
+
+/*************/
 /* HEADER */
+/************/
 
-/* MAIN */
+.header-saad {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  /* margin: 0 2rem; */
+  box-shadow: 0px 2px 5px var(--bg-color);
+  align-items: center;
+  margin-bottom: 1.2rem;
+  position: relative;
+  z-index: 2;
+}
 
-/* FOOTER */
+/*****************/
+/* Logo Image */
+/****************/
+
+.logo {
+  margin-left: 2rem;
+}
+
+/**************/
+/* Nav Bar */
+/*************/
+
+ul {
+  list-style: none;
+}
+.ul-main {
+  display: flex;
+
+  gap: 3rem;
+  margin-right: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--bg-color);
+}
+
+.ul-main > li {
+  padding: 1.2rem 0;
+}
+
+/*********************/
+/* Drop Down Menu */
+/********************/
+
+.about-drop {
+  display: none;
+}
+
+.ul-main > li:hover .double {
+  transform: scale(1.5);
+  color: var(--hover-icon-color);
+}
+
+.ul-main > li:hover > a,
+.ul-main > li:hover .fa-angle-down {
+  color: var(--hover-a-color);
+}
+
+i {
+  margin: 0 0.5rem;
+}
+
+.about-li {
+  position: relative;
+}
+
+ul-about li a {
+  color: var(--bg-color);
+}
+
+.about-li:hover .about-drop {
+  display: block;
+  position: absolute;
+  top: 3rem;
+}
+
+.about-drop,
+.drop-main-serv,
+.ul-sub-market,
+.ul-sub-mobile {
+  box-shadow: 5px 5px 8px rgb(121, 121, 121);
+  width: 12rem;
+  background-color: #f5f5f5;
+}
+
+.about-drop li,
+.drop-main-serv li,
+.ul-sub-market li,
+.ul-sub-mobile li {
+  padding: 1rem 0rem;
+
+  border-bottom: 1px solid var(--hover-icon-color);
+  width: 85%;
+  margin: 0 auto;
+}
+
+.ul-about li:hover a {
+  color: var(--hover-a-color);
+}
+
+/***********************/
+/* SERVICES DROPDOWN */
+/**********************/
+
+.drop-main-serv,
+.ul-sub-market,
+.ul-sub-mobile {
+  display: none;
+}
+
+.services-li:hover .drop-main-serv {
+  display: block;
+  position: absolute;
+  top: 3.3rem;
+}
+
+.ul-service li:hover > a {
+  color: var(--hover-a-color);
+}
+.fa-angle-right {
+  float: right;
+}
+
+/********************************/
+/* SERVICES DROPDOWN SUB-MENU */
+/*******************************/
+
+.market-li {
+  position: relative;
+}
+
+.market-li:hover .ul-sub-market {
+  display: block;
+  position: absolute;
+  left: 10rem;
+  top: 1rem;
+}
+
+.ul-sub-market li a {
+  color: var(--bg-color);
+}
+
+.mobile-li {
+  position: relative;
+}
+
+.mobile-li:hover .ul-sub-mobile {
+  display: block;
+  position: absolute;
+  left: 10rem;
+  top: 1rem;
+}
+
+.ul-sub-mobile li a {
+  color: var(--bg-color);
+}
+
+/***********/
+/* MAIN*/
+/**********/
+
+main {
+  height: calc(100vh - 90px);
+  background: radial-gradient(#03a9f4, #004b6c);
+  position: relative;
+  z-index: 1;
+}
+
+.main-container {
+  position: relative;
+  z-index: 10;
+}
+
+/*************************/
+/* Pink Caution Button */
+/************************/
+
+.caution {
+  /* background-color: #f71284; */
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border-radius: 50%;
+  margin: 0 auto;
+  transition: all linear 0.1s;
+  animation: up-down 1.2s linear 0.1s infinite alternate;
+  position: relative;
+  z-index: 3;
+}
+
+/*************************/
+/* Hover on Main Button */
+/************************/
+
+.caution:hover {
+  cursor: pointer;
+  animation: up-down 0.1s linear 0.1s infinite paused;
+  top: 0.5rem;
+  /* animation: none; */
+}
+
+/**************************/
+/* Before Pseudo Element */
+/*************************/
+
+.caution:before {
+  content: "";
+  background-color: #f71284;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  z-index: -1;
+}
+
+/**************************/
+/* After Pseudo Element */
+/*************************/
+
+.caution::after {
+  content: "Hire me !";
+  padding-left: 10rem;
+  padding-top: 2rem;
+  font-size: 1.5rem;
+
+  background-color: #03a9f4;
+  background-image: url(../images/smily.png);
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-position: 60% 70%;
+  width: 350px;
+  height: 250px;
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  z-index: -2;
+  box-shadow: 5px 5px 40px white;
+  transform: scale(0, 1);
+  transition: all linear 0.5s;
+}
+
+/************************************/
+/* Hover on After Pseudo Element */
+/***********************************/
+
+.caution:hover::after {
+  transform: scale(1, 1);
+}
+
+/***************/
+/* Freelance */
+/***************/
+
+.freelance {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+}
+
+.freeH2 {
+  animation: slide 8s linear infinite alternate;
+  position: relative;
+}
+
+.freeH2::before {
+  content: "FREELANCE";
+}
+
+/*********************/
+/* Web Development */
+/********************/
+
+.webdev {
+  position: absolute;
+  top: 75vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+}
+
+.webH2 {
+  animation: slide 10s linear infinite alternate;
+  position: relative;
+}
+
+.webH2::before {
+  content: "WEB DEVELOPER";
+}
+
+/******************/
+/* Common Class */
+/*****************/
+
+.freeH2::before,
+.webH2::before {
+  width: 100%;
+  height: 100%;
+  font-size: 4rem;
+  font-weight: bold;
+  position: absolute;
+  bottom: 35%;
+  left: 0rem;
+  transform-origin: bottom;
+  transform: rotateX(180deg);
+  transform: translateX();
+  clip-path: inset(25px 0px 0px 0px);
+  opacity: 0.3;
+}
+
+/**************/
+/* FOOTER  */
+/*************/
+
+footer {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.home,
+.about {
+  padding: 15px 0px;
+  position: relative;
+}
+
+footer a {
+  font-size: 30px;
+  letter-spacing: 1.1rem;
+  color: var(--primary-color);
+  padding: 15px 30px;
+  margin: 0 30px;
+  /* display: block; */
+}
+
+.anc-home:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.anc-home::after {
+  content: "";
+  width: 100%;
+  /* height: 2px; */
+  height: 100%;
+  border: 1px solid red;
+  transform: scale(0, 1);
+  transform-origin: right;
+  transition: all 0.5s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  /* z-index:; */
+
+  /* animation: spin 1s infinite; */
+}
+
+.anc-home:hover:after {
+  transform: scale(1, 1);
+  /* transform-origin: left; */
+}
+/******************/
+/* KEYFRAMES  */
+/*****************/
+
+@keyframes up-down {
+  from {
+    transform: translateY(50px);
+  }
+  to {
+    transform: translateY(75px);
+  }
+}
+
+@keyframes slide {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-250px, 0);
+  }
+
+  60% {
+    transform: translateX(150px);
+  }
+  80% {
+    transform: translate(50px, 0);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(180deg);
+    border-top-color: blue;
+    border-bottom-color: red;
+    border-right-color: #faac04;
+    border-left-color: aquamarine;
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
