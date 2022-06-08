@@ -239,6 +239,7 @@ main {
 .caution:hover {
   cursor: pointer;
   animation: up-down 0.1s linear 0.1s infinite paused;
+  /* position: absolute; */
   top: 0.5rem;
   /* animation: none; */
 }
@@ -267,6 +268,7 @@ main {
   content: "Hire me !";
   padding-left: 10rem;
   padding-top: 2rem;
+
   font-size: 1.5rem;
   border-radius: 0.5rem;
   background-color: #03a9f4;
@@ -277,12 +279,16 @@ main {
   width: 350px;
   height: 250px;
   position: absolute;
+  /* top: 0;
+  left: 0; */
   top: -1rem;
   left: -1rem;
   z-index: -2;
   box-shadow: 5px 5px 40px 1px white, 0 0 80px 10px white;
   transform: scale(0);
-  transition: all linear 0.5s;
+  clip-path: circle(40px at 1rem 1rem);
+  transform-origin: top left;
+  transition: all linear 1s;
 }
 
 /************************************/
@@ -291,7 +297,10 @@ main {
 
 .caution:hover::after {
   transform: scale(1);
-  transform-origin: left;
+  clip-path: circle(400px);
+
+  transform-origin: top left;
+  /* transition-delay: 1s; */
 }
 
 /***************/
@@ -349,9 +358,18 @@ main {
   left: 0rem;
   transform-origin: bottom;
   transform: rotateX(180deg);
-  transform: translateX();
+  /* transform: translateX(); */
   clip-path: inset(25px 0px 0px 0px);
-  opacity: 0.3;
+  /* opacity: 0.5; */
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0)
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 /**************/
@@ -371,7 +389,6 @@ section {
 /********************/
 
 .btn {
-  position: relative;
   display: block;
   padding: 15px 30px;
   color: var(--primary-color);
@@ -383,6 +400,7 @@ section {
   transition: 0.2s;
   margin: 0 30px;
   position: relative;
+  /* position: absolute; */
 }
 
 .btn:hover {
