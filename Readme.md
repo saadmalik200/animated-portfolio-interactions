@@ -1,8 +1,15 @@
 # Animated Portfolio
 
+## Link
+
+- Live Site URL: [https://saadmalik200.github.io/animated-portfolio-interactions/](https://saadmalik200.github.io/animated-portfolio-interactions/)
+
+## Challenge
+
 In this exercise we'll be creating a single portfolio webpage with dropdown menu, `clip-path` and animations
 
-The website you will be making is [here...](https://hsnakk.github.io/UIB_Interaction_Exercise-1/)
+The website you will be making is:
+![mockup-image](./images/CPT2206082345-1903x998.gif)
 
 ## Keep in Mind
 
